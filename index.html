@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convoitee | Роскошное шелковое белье</title>
+    <title>Convoitee | Шелковое нижнее белье премиум-класса</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://convoitee.com/wp-content/uploads/2022/02/favicon.ico">
     <style>
         :root {
             --primary-color: #8b5a7c;
@@ -34,6 +37,7 @@
             font-family: 'Raleway', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -234,40 +238,35 @@
             cursor: pointer;
         }
 
-        /* Чистый баннер без затемнения */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://convoitee.com/wp-content/uploads/2022/09/conv-main-1800x1200-1.jpeg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://convoitee.com/wp-content/uploads/2022/09/conv-main-1800x1200-1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
             padding-top: 80px;
-            position: relative;
         }
 
-        /* Легкий оверлей для читаемости текста */
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            color: var(--dark-color);
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            color: var(--dark-color);
+            color: white;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 40px;
-            color: var(--text-color);
+            opacity: 0.9;
         }
 
         .hero-btns {
@@ -339,6 +338,46 @@
             font-size: 0.95rem;
         }
 
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
         /* Collections */
         .collections {
             background-color: var(--secondary-color);
@@ -387,49 +426,88 @@
             margin-bottom: 10px;
         }
 
-        /* Benefits */
-        .benefits {
-            text-align: center;
+        /* Testimonials */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            padding: 30px 20px;
+        .testimonial {
             background-color: white;
+            padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            transition: var(--transition);
+            text-align: center;
+            margin: 0 15px;
         }
 
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .benefit-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(139, 90, 124, 0.1);
-            border-radius: 50%;
+        .testimonial-author {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            gap: 15px;
         }
 
-        .benefit-icon i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+        .testimonial-author h4 {
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .newsletter-form button {
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            border: none;
         }
 
         /* Footer */
@@ -514,6 +592,18 @@
             padding-left: 5px;
         }
 
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -526,6 +616,15 @@
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-image {
+                order: -1;
             }
         }
 
@@ -564,6 +663,17 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: var(--border-radius);
+                margin-bottom: 15px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -600,7 +710,7 @@
                 <a href="#" class="active">Главная</a>
                 <a href="#products">Коллекции</a>
                 <a href="#about">О нас</a>
-                <a href="#benefits">Преимущества</a>
+                <a href="#collections">Каталог</a>
                 <a href="#contact">Контакты</a>
             </nav>
             
@@ -616,7 +726,7 @@
         </div>
     </header>
 
-    <!-- Hero Section с чистой картинкой -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -631,7 +741,7 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="section-padding featured-products" id="products">
+    <section class="section-padding" id="products">
         <div class="container">
             <div class="section-title">
                 <h2>Избранные товары</h2>
@@ -642,8 +752,7 @@
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <!-- Вставьте URL фото товара с вашего сайта -->
-                        <img src="https://images.unsplash.com/photo-1583494936758-1d4d5d4b9c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Бюстгальтер из натурального шёлка">
+                        <img src="https://images.unsplash.com/photo-1587270613297-7a6d6f0c1c8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Бюстгальтер из натурального шёлка">
                     </div>
                     <div class="product-info">
                         <h3>Бюстгальтер из натурального шёлка</h3>
@@ -656,8 +765,7 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <!-- Вставьте URL фото товара с вашего сайта -->
-                        <img src="https://images.unsplash.com/photo-1583494939360-2c8c0c4864bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Трусики из натурального шёлка">
+                        <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Трусики из натурального шёлка">
                     </div>
                     <div class="product-info">
                         <h3>Трусики из натурального шёлка</h3>
@@ -670,8 +778,7 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <!-- Вставьте URL фото товара с вашего сайта -->
-                        <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Комплект из натурального шёлка">
+                        <img src="https://images.unsplash.com/photo-1586611291517-9b2c5b5b7c5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Комплект из натурального шёлка">
                     </div>
                     <div class="product-info">
                         <h3>Комплект из натурального шёлка</h3>
@@ -687,38 +794,81 @@
     <!-- About Section -->
     <section class="section-padding" id="about">
         <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Convoitee — безупречное качество и утонченный стиль</h2>
+                    <p>Мы создаем нижнее белье из 100% натурального шелка, которое сочетает в себе невероятный комфорт, изысканный дизайн и безупречное качество.</p>
+                    <p>Каждое изделие создается с любовью и вниманием к деталям, чтобы подчеркнуть вашу естественную красоту и обеспечить непревзойденный комфорт в течение всего дня.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Натуральные материалы</h3>
+                                <p>Используем только 100% натуральный шелк высшего качества</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Ручная работа</h3>
+                                <p>Каждое изделие создается с вниманием к деталям</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Устойчивое производство</h3>
+                                <p>Заботимся об экологии и этичном производстве</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#collections" class="btn" style="margin-top: 20px;">Исследовать коллекции</a>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1587271339318-2e78fdf79586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="О Convoitee">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="section-padding collections" id="collections">
+        <div class="container">
             <div class="section-title">
-                <h2>О Convoitee</h2>
-                <p>Узнайте больше о нашем бренде и философии</p>
+                <h2>Наши коллекции</h2>
+                <p>Откройте для себя различные стили и цвета нашего эксклюзивного нижнего белья</p>
             </div>
             
             <div class="collection-grid">
                 <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Наше производство">
+                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Классическая коллекция">
                     <div class="collection-overlay">
                         <div>
-                            <h3>Наше производство</h3>
-                            <p>Ручная работа и внимание к деталям</p>
+                            <h3>Классическая коллекция</h3>
+                            <p>Вечная элегантность в нейтральных тонах</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Материалы">
+                    <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Вечерняя коллекция">
                     <div class="collection-overlay">
                         <div>
-                            <h3>Материалы</h3>
-                            <p>100% натуральный шелк высшего качества</p>
+                            <h3>Вечерняя коллекция</h3>
+                            <p>Изысканные комплекты для особых случаев</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1583494936758-1d4d5d4b9c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дизайн">
+                    <img src="https://images.unsplash.com/photo-1583494936758-1d4d5d4b9c1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Спортивная коллекция">
                     <div class="collection-overlay">
                         <div>
-                            <h3>Дизайн</h3>
-                            <p>Элегантность и комфорт в каждой детали</p>
+                            <h3>Спортивная коллекция</h3>
+                            <p>Удобство и поддержка для активного образа жизни</p>
                         </div>
                     </div>
                 </div>
@@ -726,47 +876,43 @@
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="section-padding benefits" id="benefits">
+    <!-- Testimonials -->
+    <section class="section-padding">
         <div class="container">
             <div class="section-title">
-                <h2>Наши преимущества</h2>
-                <p>Почему выбирают Convoitee</p>
+                <h2>Отзывы клиентов</h2>
+                <p>Что говорят наши клиенты о продукции Convoitee</p>
             </div>
             
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-leaf"></i>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Это самое комфортное нижнее белье, которое я когда-либо носила. Шелк невероятно мягкий и приятный к телу. Качество на высшем уровне!"
                     </div>
-                    <h3>Натуральные материалы</h3>
-                    <p>100% натуральный шелк высшего качества</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-hands"></i>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Анна Петрова">
+                        <div>
+                            <h4>Анна Петрова</h4>
+                            <p>Клиент Convoitee более 2 лет</p>
+                        </div>
                     </div>
-                    <h3>Ручная работа</h3>
-                    <p>Каждое изделие создается вручную</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Гарантия качества</h3>
-                    <p>Гарантия на все изделия 1 год</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Быстрая доставка</h3>
-                    <p>Доставка по всей России</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-padding newsletter">
+        <div class="container">
+            <div class="section-title">
+                <h2>Подпишитесь на рассылку</h2>
+                <p>Получайте эксклюзивные предложения, новости о коллекциях и советы по уходу за шелком</p>
+            </div>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit" class="btn">Подписаться</button>
+            </form>
         </div>
     </section>
 
@@ -791,7 +937,8 @@
                         <li><a href="#">Главная</a></li>
                         <li><a href="#products">Коллекции</a></li>
                         <li><a href="#about">О нас</a></li>
-                        <li><a href="#benefits">Преимущества</a></li>
+                        <li><a href="#collections">Каталог</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
                     </ul>
                 </div>
                 
@@ -801,6 +948,7 @@
                         <li><a href="#">Таблица размеров</a></li>
                         <li><a href="#">Уход за шелком</a></li>
                         <li><a href="#">Возврат и обмен</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
                         <li><a href="#">Конфиденциальность</a></li>
                     </ul>
                 </div>
@@ -810,6 +958,7 @@
                     <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Тверская, д. 10</p>
                     <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
                     <p><i class="fas fa-envelope"></i> info@convoitee.com</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 10:00-20:00, Сб-Вс: 11:00-19:00</p>
                 </div>
             </div>
             
@@ -865,6 +1014,17 @@
                     });
                 }
             });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // In a real application, you would send this to a server
+            alert(`Спасибо за подписку! На адрес ${email} отправлено письмо с подтверждением.`);
+            this.reset();
         });
         
         // Product card click handlers
