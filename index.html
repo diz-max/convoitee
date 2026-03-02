@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convoitee — полная версия с медиа</title>
+  <title>Convoitee — креативная презентация бренда</title>
   <style>
     * {
       margin: 0;
@@ -12,577 +12,587 @@
     }
 
     body {
-      background: #2c1e16;
       font-family: 'Cormorant Garamond', 'Georgia', serif;
+      background: #2c1e16;
       color: #3a241b;
-      scroll-behavior: smooth;
+      line-height: 1.5;
     }
 
-    .slide, .content-card, .btn, .stat-block, .contact-item, .pill-badge, .feature-icon, img {
-      border-radius: 16px !important;
-    }
-
-    .presentation {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-    }
-
-    .slide {
-      min-height: 100vh;
-      scroll-snap-align: start;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 3rem;
-      border-radius: 24px 24px 0 0;
-      margin: 0 1rem 1rem 1rem;
-      box-shadow: 0 25px 50px -15px rgba(0,0,0,0.6);
-    }
-
-    /* Фирменные градиенты с фуксией */
-    .slide-1 { background: linear-gradient(145deg, #ffd7c4 0%, #ffb3d1 70%, #ff8eb5 100%); }
-    .slide-2 { background: radial-gradient(circle at 10% 30%, #ffe5d5, #ffc2d6, #ff9bb8); }
-    .slide-3 { background: linear-gradient(125deg, #fce6d6, #ffb8cf, #ffd3b5); }
-    .slide-4 { background: radial-gradient(ellipse at top, #ffe2d0, #ffaac9); }
-    .slide-5 { background: linear-gradient(115deg, #ffd1bb, #ff9fc3, #ffc1a3); }
-    .slide-6 { background: radial-gradient(circle at 30% 70%, #ffddcc, #ffb1ca, #ffd4b0); }
-    .slide-7 { background: linear-gradient(145deg, #fbcbb5, #ff9bc0, #ffcfa8); }
-    .slide-8 { background: radial-gradient(ellipse at 60% 40%, #ffcdbb, #ffadc9, #fec8a8); }
-    .slide-9 { background: linear-gradient(135deg, #ffdac8, #ffa7c5, #ffcbb2); }
-    .slide-10 { background: radial-gradient(circle at 80% 20%, #ffd0bd, #ff9abf, #ffbea3); }
-
-    .content-wrapper {
-      max-width: 1300px;
-      width: 100%;
+    /* ФИКСИРОВАННОЕ МЕНЮ */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
       background: rgba(255, 245, 240, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 3rem 4rem;
-      border-radius: 28px;
-      box-shadow: 0 30px 50px -20px rgba(199, 0, 100, 0.4), 0 0 0 2px rgba(255, 128, 150, 0.6) inset;
+      backdrop-filter: blur(15px);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      box-shadow: 0 15px 40px rgba(199, 0, 100, 0.3), 0 0 0 2px #ff99bb inset;
+      display: flex;
+      gap: 2rem;
       border: 1px solid #ffb0c3;
     }
 
-    h1 {
-      font-size: 5.2rem;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      color: #371f16;
-      line-height: 1.1;
-      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
-    }
-
-    h2 {
-      font-size: 3.4rem;
-      font-weight: 350;
-      color: #4d2b1e;
-      margin-bottom: 2rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 3px solid #ff5690;
-      display: inline-block;
-      text-shadow: 1px 1px 6px #ffc0cb70;
-    }
-
-    h3 {
+    .navbar a {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 1.6rem;
-      letter-spacing: 2px;
-      color: #b34167;
-      margin-bottom: 1.5rem;
-    }
-
-    .fuchsia-text {
-      color: #d43f73;
-      font-weight: 600;
-      text-shadow: 0 0 8px #ffb6c1;
-    }
-
-    .lead-text {
-      font-size: 1.9rem;
-      font-style: italic;
-      color: #482c20;
-      margin-bottom: 2rem;
-      line-height: 1.4;
-      background: rgba(255, 230, 240, 0.7);
-      padding: 1rem 2rem;
-      border-radius: 40px;
-      display: inline-block;
-    }
-
-    .grid-3, .grid-2, .grid-4 {
-      display: grid;
-      gap: 2rem;
-      margin: 2.5rem 0;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-    .content-card {
-      background: rgba(255, 235, 240, 0.85);
-      backdrop-filter: blur(4px);
-      padding: 2rem 1.8rem;
-      border-radius: 16px;
-      box-shadow: 0 20px 30px -10px #b3416750, 0 0 0 2px #ff99bb inset;
-      border: 1px solid #ff84a9;
+      color: #4d2b1e;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 0.5rem 0;
       transition: all 0.3s;
+      border-bottom: 2px solid transparent;
     }
 
-    .content-card:hover {
-      background: #fff0f5;
-      box-shadow: 0 25px 35px -8px #c72466;
-      transform: translateY(-8px);
-      border-color: #ff4076;
+    .navbar a:hover {
+      color: #d43f73;
+      border-bottom-color: #ff5690;
+    }
+
+    /* ОСНОВНОЙ КОНТЕЙНЕР */
+    .presentation {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 2rem 2rem;
+    }
+
+    /* ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ */
+    section {
+      margin-bottom: 6rem;
+      scroll-margin-top: 100px;
+      position: relative;
+    }
+
+    /* КРЕАТИВНЫЕ ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ */
+    .section-decoration {
+      position: absolute;
+      top: -30px;
+      right: 30px;
+      font-size: 12rem;
+      font-weight: 900;
+      color: rgba(255, 86, 144, 0.1);
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1;
+      text-transform: uppercase;
+      transform: rotate(5deg);
+    }
+
+    .section-title {
+      font-size: 3.8rem;
+      font-weight: 300;
+      color: #4d2b1e;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 4px solid #ff5690;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      text-shadow: 3px 3px 10px rgba(255, 200, 220, 0.5);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40%;
+      height: 4px;
+      background: #ffb0cb;
+    }
+
+    /* КАРТОЧКИ И КОНТЕЙНЕРЫ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-card {
+      background: rgba(255, 235, 245, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 25px 40px -15px #b3416780, 0 0 0 2px #ff99bb inset;
+      border: 1px solid #ff84a9;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-15px) rotate(1deg);
+      box-shadow: 0 35px 50px -15px #c72466, 0 0 0 3px #ff4076 inset;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
     }
 
     .feature-icon {
-      font-size: 3rem;
+      font-size: 3.5rem;
       background: #ffd9e5;
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 20px;
-      margin-bottom: 1.2rem;
+      border-radius: 30px;
+      margin-bottom: 1.8rem;
       color: #a1355a;
-      box-shadow: 0 8px 15px #ff87b0;
+      box-shadow: 0 15px 25px #ff87b0;
+      transform: rotate(-5deg);
+      transition: transform 0.3s;
     }
 
-    .stats-container {
+    .feature-card:hover .feature-icon {
+      transform: rotate(0deg) scale(1.1);
+    }
+
+    /* СТАТИСТИКА */
+    .stats-wrapper {
       display: flex;
       justify-content: space-around;
-      margin: 3rem 0;
+      flex-wrap: wrap;
       gap: 2rem;
+      margin: 4rem 0;
+      background: rgba(255, 235, 245, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 60px;
+      padding: 3rem;
+      border: 2px solid #ff99bb;
+      box-shadow: 0 30px 50px -20px #b33b66;
     }
 
-    .stat-block {
-      background: rgba(255, 235, 245, 0.9);
-      padding: 2rem 2.5rem;
-      border-radius: 24px;
+    .stat-item {
       text-align: center;
       min-width: 180px;
-      backdrop-filter: blur(4px);
-      border: 2px solid #ff7ca9;
-      box-shadow: 0 15px 25px #b3416750;
     }
 
     .stat-number {
-      font-size: 4.5rem;
+      font-size: 5.5rem;
       font-weight: 200;
       font-family: 'Montserrat', sans-serif;
       color: #b33b66;
       line-height: 1;
-      text-shadow: 0 0 12px #ffa5c0;
+      text-shadow: 0 0 20px #ffa5c0;
+      margin-bottom: 0.5rem;
     }
 
     .stat-label {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       letter-spacing: 2px;
       color: #4d2a1c;
       text-transform: uppercase;
       font-weight: 500;
     }
 
-    .contact-item {
+    /* ИЗОБРАЖЕНИЯ */
+    .image-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .image-frame {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 40px -15px #b34167;
+      border: 3px solid #ff99bb;
+      transition: all 0.5s;
+      aspect-ratio: 1/1.2;
+    }
+
+    .image-frame:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 35px 60px -15px #ff3470;
+      border-color: #ff3f7a;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ЛОГОТИПЫ МАРКЕТПЛЕЙСОВ */
+    .marketplace-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+
+    .marketplace-item {
+      background: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      border: 3px solid #ff5b8f;
+      box-shadow: 0 15px 25px #b3416750;
+      transition: 0.3s;
+    }
+
+    .marketplace-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 35px #b32258;
+    }
+
+    .marketplace-item img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* КОНТАКТЫ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      background: rgba(255, 235, 245, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 3rem;
+      border: 2px solid #ff99bb;
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      font-size: 1.4rem;
+      margin: 1.8rem 0;
       background: #ffe1ec;
       padding: 1rem 2rem;
-      border-radius: 40px;
-      margin: 1.2rem 0;
+      border-radius: 60px;
       border: 2px solid #ff80a8;
-      font-size: 1.4rem;
-      color: #2f1a12;
-      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .contact-list li:hover {
+      transform: translateX(10px);
+      background: #ffb0cb;
     }
 
     .contact-icon {
       background: #ff5690;
       color: white;
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 20px;
+      border-radius: 30px;
       font-size: 2rem;
-      box-shadow: 0 6px 10px #b3004b;
+      box-shadow: 0 8px 12px #b3004b;
     }
 
-    .btn-soft {
+    /* КНОПКИ */
+    .btn-fuchsia {
       display: inline-block;
-      padding: 1.2rem 3rem;
+      padding: 1.2rem 3.5rem;
       font-family: 'Montserrat', sans-serif;
       background: #ffecf0;
       border: 3px solid #ff3f7a;
-      border-radius: 40px;
+      border-radius: 60px;
       color: #371f16;
       text-decoration: none;
       letter-spacing: 3px;
       font-size: 1.3rem;
-      backdrop-filter: blur(4px);
-      transition: all 0.4s;
-      margin-top: 2rem;
       font-weight: 600;
-      box-shadow: 0 5px 0 #b32258;
-    }
-
-    .btn-soft:hover {
-      background: #ffb0cb;
-      border-color: #d41e5a;
-      box-shadow: 0 8px 20px #ff80b0;
-      transform: scale(1.02);
-    }
-
-    .pill-badge {
-      background: #ffebf0;
-      padding: 0.8rem 2.2rem;
-      border-radius: 30px;
-      display: inline-block;
-      backdrop-filter: blur(2px);
-      border: 2px solid #ff74a2;
-      font-size: 1.1rem;
-      color: #4d261b;
-      font-weight: 500;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 16px;
-      box-shadow: 0 15px 30px -5px #b3416780;
-      border: 2px solid #ff99bb;
-    }
-
-    .image-wrapper {
-      border-radius: 16px;
-      overflow: hidden;
-      height: 100%;
-      max-height: 400px;
-    }
-
-    .marketplace-logos {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      align-items: center;
-      flex-wrap: wrap;
-      margin: 2.5rem 0;
-    }
-
-    .marketplace-logos img {
-      width: auto;
-      height: 70px;
-      max-width: 180px;
-      object-fit: contain;
-      background: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 12px !important;
-      border: 2px solid #ff5b8f;
-    }
-
-    .fuchsia-stripe {
-      height: 4px;
-      background: linear-gradient(90deg, #ff99bb, #ff3470, #ff99bb);
-      width: 100%;
-      margin: 1.5rem 0;
-    }
-
-    /* стили для ссылок на публикации */
-    .press-link {
-      display: block;
-      background: rgba(255, 220, 235, 0.7);
-      padding: 1rem 1.8rem;
-      border-radius: 40px;
-      border: 2px solid #ff5690;
-      color: #371f16;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: 0.3s;
+      box-shadow: 0 8px 0 #b32258;
+      transition: all 0.2s;
       margin: 1rem 0;
     }
 
-    .press-link:hover {
+    .btn-fuchsia:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px #ff80b0;
       background: #ffb0cb;
-      transform: translateX(8px);
     }
 
-    .event-badge {
-      background: #ffd0dd;
-      padding: 0.5rem 1.5rem;
-      border-radius: 30px;
-      display: inline-block;
-      border: 2px solid #ff3f7a;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #a52d5a;
+    /* ФУТЕР */
+    .footer {
+      text-align: center;
+      padding: 4rem 0 2rem;
+      border-top: 2px dashed #ff99bb;
+      margin-top: 4rem;
     }
 
+    /* АДАПТАЦИЯ */
     @media (max-width: 900px) {
-      h1 { font-size: 3.5rem; }
-      h2 { font-size: 2.5rem; }
-      .grid-3, .grid-2, .grid-4, .stats-container { grid-template-columns: 1fr; flex-direction: column; }
-      .content-wrapper { padding: 2rem; }
-      .slide { padding: 1rem; }
+      .navbar { flex-wrap: wrap; width: 90%; gap: 1rem; justify-content: center; }
+      .section-title { font-size: 2.8rem; }
+      .image-showcase { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
+<!-- ФИКСИРОВАННОЕ МЕНЮ -->
+<nav class="navbar">
+  <a href="#home">Convoitee</a>
+  <a href="#about">О нас</a>
+  <a href="#quality">Качество</a>
+  <a href="#stats">Цифры</a>
+  <a href="#catalog">Каталог</a>
+  <a href="#market">Где купить</a>
+  <a href="#media">Медиа</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
 <div class="presentation">
 
-  <!-- СЛАЙД 1 – титульный -->
-  <section class="slide slide-1">
-    <div class="content-wrapper" style="text-align: center;">
-      <img src="https://github.com/diz-max/convoitee/raw/7953b2995e21ed14fb5d751f827b37dbc922c989/images/logo.png" 
-           alt="Convoitee logo" 
-           style="max-width: 300px; margin: 0 auto 1rem; filter: drop-shadow(0 5px 10px #ff8fb3);">
-      <h1>итальянская роскошь<br><span class="fuchsia-text">на вашей коже</span></h1>
-      <div class="fuchsia-stripe" style="max-width: 500px; margin: 1rem auto;"></div>
-      <div class="lead-text" style="font-size: 2rem;">since 2018 · тайная уверенность</div>
-      <div class="image-wrapper" style="max-width: 700px; margin: 2rem auto 0;">
-        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1.jpg" 
-             alt="Convoitee шелковое белье">
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 2 – философия -->
-  <section class="slide slide-2">
-    <div class="content-wrapper">
-      <h2>История любви к себе</h2>
-      <div class="grid-2">
-        <div>
-          <p class="lead-text">«С 2018 года мы создаём нижнее бельё, где каждая деталь — история вашей внутренней уверенности. Convoitee — это не просто белье, это тайная уверенность, которая всегда с вами.»</p>
-          <div class="pill-badge">— команда Convoitee</div>
-        </div>
-        <div class="image-wrapper">
-          <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1768902346.png" 
-               alt="Утонченность Convoitee">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 3 – три качества -->
-  <section class="slide slide-3">
-    <div class="content-wrapper">
-      <h2>Безупречно в каждой детали</h2>
-      <div class="grid-3">
-        <div class="content-card">
-          <div class="feature-icon">🧵</div>
-          <h3>Итальянский шёлк</h3>
-          <p>Сертифицированные ткани из Италии с идеальной структурой. Та самая «вторая кожа».</p>
-        </div>
-        <div class="content-card">
-          <div class="feature-icon">📐</div>
-          <h3>Анатомичный крой</h3>
-          <p>Разрабатываем с учётом естественных изгибов тела для идеальной посадки.</p>
-        </div>
-        <div class="content-card">
-          <div class="feature-icon">🪡</div>
-          <h3>Ручная отделка</h3>
-          <p>Каждый элемент собирается вручную, чтобы гарантировать безупречное качество.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 4 – цифры + регистрация товарного знака -->
-  <section class="slide slide-4">
-    <div class="content-wrapper">
-      <h2>Нам доверяют</h2>
-      <div class="stats-container">
-        <div class="stat-block">
-          <div class="stat-number">2018</div>
-          <div class="stat-label">год основания</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">стран доставки</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">клиентов довольны</div>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <div class="pill-badge" style="background: #ffd9e6; font-size: 1.2rem;">
-          ⚖️ Официальная торговая марка №629778 (зарегистрирована 12.09.2017)
-        </div>
-        <p style="margin-top: 1rem; font-size: 1.2rem;">Правообладатель: Горячева Елена Владимировна</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 5 – каталог моделей -->
-  <section class="slide slide-5">
-    <div class="content-wrapper">
-      <h2>Каталог Convoitee</h2>
-      <p class="lead-text">Эксклюзивные модели, созданные с любовью к деталям</p>
-      <div class="grid-3">
-        <div class="content-card" style="padding: 1.5rem;">
-          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_fucsia.jpg" 
-                 alt="Комплект фуксия">
-          </div>
-          <p style="text-align: center; font-size: 1.3rem; color: #b33b66;">комплект «Фуксия»</p>
-        </div>
-        <div class="content-card" style="padding: 1.5rem;">
-          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_sinii.jpg" 
-                 alt="Комплект синий">
-          </div>
-          <p style="text-align: center; font-size: 1.3rem; color: #2f6290;">комплект «Индиго»</p>
-        </div>
-        <div class="content-card" style="padding: 1.5rem;">
-          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1769711735.png" 
-                 alt="Пеньюар">
-          </div>
-          <p style="text-align: center; font-size: 1.3rem; color: #b3623b;">пеньюар</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 6 – маркетплейсы -->
-  <section class="slide slide-6">
-    <div class="content-wrapper">
-      <h2>Мы на маркетплейсах</h2>
-      <p class="lead-text">Wildberries, Ozon — быстрая доставка и гарантия качества.</p>
-      <div class="marketplace-logos">
-        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/wallberis_logo.png" 
-             alt="Wildberries">
-        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/ozon_logo.png" 
-             alt="Ozon">
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 7 – доставка и оплата -->
-  <section class="slide slide-7">
-    <div class="content-wrapper">
-      <h2>Ваш комфорт — наш приоритет</h2>
-      <div class="grid-2">
-        <div>
-          <h3>💎 Оплата</h3>
-          <ul style="font-size: 1.5rem; list-style: none;">
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ СБП (мгновенно)</li>
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ Картой онлайн</li>
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ Наличные при получении</li>
-          </ul>
-        </div>
-        <div>
-          <h3>🚚 Доставка</h3>
-          <ul style="font-size: 1.5rem; list-style: none;">
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ СДЭК (2-7 дней)</li>
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ Почта России</li>
-            <li class="pill-badge" style="margin: 0.7rem 0;">✓ Курьер (Москва/СПб)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="content-card" style="background: #ffe6f0; margin-top: 2rem; text-align: center; padding: 2rem;">
-        <span style="font-size: 1.8rem; color: #a52d5a;">🎁 Бесплатная курьерская доставка по Москве и СПб от 5000₽</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 8 – МЕДИА И СОБЫТИЯ (новый) -->
-  <section class="slide slide-8">
-    <div class="content-wrapper">
-      <h2>Медиа и события</h2>
-      
-      <div class="grid-2" style="margin-bottom: 2rem;">
-        <!-- левая колонка: публикации -->
-        <div>
-          <h3>📰 О нас пишут</h3>
-          <a href="https://popmoda.ru/news/shelkovoe-bele-convoitee" target="_blank" class="press-link">
-            ✦ Popmoda.ru: шелковое белье Convoitee (лимитированная коллекция)
-          </a>
-          <div style="margin-top: 1.5rem;">
-            <span class="event-badge">⚡ Упоминание в РБК Companies</span>
-            <p style="margin-top: 0.8rem;">Товарный знак CONVOITEE №629778 (2017–2026)</p>
-          </div>
-        </div>
-        <!-- правая колонка: участие в выставке -->
-        <div>
-          <h3>🏆 Участие в выставке</h3>
-          <div class="pill-badge" style="font-size: 1.4rem; background: #ffd0e0;">XVIII Lingerie Show-Forum 2022</div>
-          <p style="margin: 1rem 0;">Москва, 2022 — презентация новых коллекций</p>
-        </div>
-      </div>
-
-      <!-- галерея фото с выставки (6 штук) -->
-      <h3 style="margin: 2rem 0 1rem;">📸 Фотографии с Lingerie Show-Forum</h3>
-      <div class="grid-3" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0209.JPG" alt="Выставка LSF 1">
-        </div>
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0225.JPG" alt="Выставка LSF 2">
-        </div>
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0226.JPG" alt="Выставка LSF 3">
-        </div>
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1162.JPG" alt="Выставка LSF 4">
-        </div>
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1215.JPG" alt="Выставка LSF 5">
-        </div>
-        <div class="image-wrapper" style="height: 150px;">
-          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/photo_5409222705145830781_y.jpg" alt="Выставка LSF 6">
-        </div>
-      </div>
-      <p style="text-align: center; margin-top: 1.5rem;" class="pill-badge">★ Convoitee — участник главного события индустрии ★</p>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 9 – контакты и сертификат -->
-  <section class="slide slide-9">
-    <div class="content-wrapper">
-      <h2>Мы всегда на связи</h2>
-      <div class="grid-2">
-        <div>
-          <p class="lead-text" style="font-size: 1.5rem;">Бесплатные консультации, обработка 1–2 часа, ежедневно 9:00–21:00</p>
-          <div class="contact-item"><span class="contact-icon">📞</span> +7 (925) 900-50-28 (Елена)</div>
-          <div class="contact-item"><span class="contact-icon">✉️</span> info@convoitee.ru</div>
-          <div class="contact-item"><span class="contact-icon">📱</span> t.me/convoitee_ru</div>
-          <div class="contact-item"><span class="contact-icon">📌</span> vk.com/convoitee_shop</div>
-        </div>
-        <div>
-          <div class="content-card" style="text-align: center;">
-            <h3>сертификат соответствия</h3>
-            <div class="image-wrapper" style="height: 150px;">
-              <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/sertifikat.png" 
-                   alt="Сертификат качества Convoitee">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- СЛАЙД 10 – финальный -->
-  <section class="slide slide-10">
-    <div class="content-wrapper" style="text-align: center;">
+  <!-- ГЛАВНАЯ (home) -->
+  <section id="home">
+    <div style="text-align: center; padding: 2rem 0 4rem;">
       <img src="https://github.com/diz-max/convoitee/raw/7953b2995e21ed14fb5d751f827b37dbc922c989/images/logo.png" 
            alt="Convoitee" 
-           style="max-width: 250px; margin-bottom: 1.5rem; filter: drop-shadow(0 5px 10px #ff80a8);">
-      <div class="lead-text" style="font-size: 2.5rem;">Ваша тайная уверенность</div>
-      <div class="fuchsia-stripe" style="max-width: 300px; margin: 1rem auto;"></div>
-      <p style="font-size: 2rem; color: #802d4d;">Переходите на сайт</p>
-      <a href="https://convoitee.ru" target="_blank" class="btn-soft">convoitee.ru</a>
-      <div style="margin-top: 3rem;" class="pill-badge">✧ итальянский шёлк с 2018 ✧</div>
+           style="max-width: 350px; margin-bottom: 2rem; filter: drop-shadow(0 10px 20px #ff8fb3);">
+      <h1 style="font-size: 6rem; font-weight: 200; color: #4d2b1e; line-height: 1.1;">
+        итальянская роскошь<br>
+        <span style="color: #d43f73; font-weight: 400; text-shadow: 0 0 20px #ffb6c1;">на вашей коже</span>
+      </h1>
+      <div style="width: 200px; height: 4px; background: linear-gradient(90deg, #ff99bb, #ff3470, #ff99bb); margin: 2rem auto;"></div>
+      <p style="font-size: 2.2rem; font-style: italic; color: #482c20;">since 2018 · тайная уверенность</p>
+      
+      <div style="max-width: 1000px; margin: 4rem auto 0;">
+        <div class="image-frame" style="aspect-ratio: 16/9; max-height: 600px;">
+          <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1.jpg" 
+               alt="Convoitee шелковое белье">
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- О НАС (about) -->
+  <section id="about">
+    <div class="section-decoration">ABOUT</div>
+    <h2 class="section-title">История любви к себе</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+      <div>
+        <p style="font-size: 2rem; font-style: italic; background: rgba(255, 230, 240, 0.7); padding: 2rem; border-radius: 40px;">
+          «С 2018 года мы создаём нижнее бельё, где каждая деталь — история вашей внутренней уверенности. Convoitee — это не просто белье, это тайная уверенность, которая всегда с вами.»
+        </p>
+        <div style="margin-top: 2rem; font-size: 1.5rem;">— команда Convoitee</div>
+      </div>
+      <div class="image-frame" style="aspect-ratio: 1/1;">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1768902346.png" 
+             alt="Утонченность Convoitee">
+      </div>
+    </div>
+  </section>
+
+  <!-- КАЧЕСТВО (quality) -->
+  <section id="quality">
+    <div class="section-decoration">QUALITY</div>
+    <h2 class="section-title">Безупречно в каждой детали</h2>
+    
+    <div class="card-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧵</div>
+        <h3 style="font-size: 2rem; color: #b34167;">Итальянский шёлк</h3>
+        <p style="font-size: 1.3rem;">Сертифицированные ткани из Италии с идеальной структурой. Та самая «вторая кожа».</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📐</div>
+        <h3 style="font-size: 2rem; color: #b34167;">Анатомичный крой</h3>
+        <p style="font-size: 1.3rem;">Разрабатываем с учётом естественных изгибов тела для идеальной посадки.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🪡</div>
+        <h3 style="font-size: 2rem; color: #b34167;">Ручная отделка</h3>
+        <p style="font-size: 1.3rem;">Каждый элемент собирается вручную, чтобы гарантировать безупречное качество.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦИФРЫ И ТОВАРНЫЙ ЗНАК (stats) -->
+  <section id="stats">
+    <div class="section-decoration">STATS</div>
+    <h2 class="section-title">Нам доверяют</h2>
+    
+    <div class="stats-wrapper">
+      <div class="stat-item">
+        <div class="stat-number">2018</div>
+        <div class="stat-label">год основания</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">стран доставки</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">клиентов довольны</div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; background: #ffd9e6; padding: 2rem; border-radius: 60px; border: 2px solid #ff5690;">
+      <p style="font-size: 1.8rem;">⚖️ Официальная торговая марка <strong>№629778</strong> (зарегистрирована 12.09.2017)</p>
+      <p style="font-size: 1.4rem;">Правообладатель: Горячева Елена Владимировна</p>
+    </div>
+  </section>
+
+  <!-- КАТАЛОГ (catalog) -->
+  <section id="catalog">
+    <div class="section-decoration">SHOP</div>
+    <h2 class="section-title">Каталог Convoitee</h2>
+    <p style="font-size: 2rem; margin-bottom: 3rem;">Эксклюзивные модели, созданные с любовью к деталям</p>
+    
+    <div class="image-showcase">
+      <div class="image-frame">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_fucsia.jpg" alt="Фуксия">
+        <div style="text-align: center; margin-top: 1rem; font-size: 1.5rem; color: #b33b66;">комплект «Фуксия»</div>
+      </div>
+      <div class="image-frame">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_sinii.jpg" alt="Индиго">
+        <div style="text-align: center; margin-top: 1rem; font-size: 1.5rem; color: #2f6290;">комплект «Индиго»</div>
+      </div>
+      <div class="image-frame">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1769711735.png" alt="Пеньюар">
+        <div style="text-align: center; margin-top: 1rem; font-size: 1.5rem; color: #b3623b;">пеньюар</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ГДЕ КУПИТЬ (market) -->
+  <section id="market">
+    <div class="section-decoration">BUY</div>
+    <h2 class="section-title">Мы на маркетплейсах</h2>
+    <p style="font-size: 2rem;">Wildberries, Ozon — быстрая доставка и гарантия качества.</p>
+    
+    <div class="marketplace-row">
+      <div class="marketplace-item">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/wallberis_logo.png" alt="Wildberries">
+      </div>
+      <div class="marketplace-item">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/ozon_logo.png" alt="Ozon">
+      </div>
+    </div>
+
+    <!-- ДОСТАВКА И ОПЛАТА (часть этого же раздела) -->
+    <div style="margin-top: 4rem;">
+      <h3 style="font-size: 2.5rem; color: #b34167;">Ваш комфорт — наш приоритет</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 2rem 0;">
+        <div>
+          <h4>💎 Оплата</h4>
+          <ul style="font-size: 1.5rem; list-style: none;">
+            <li class="pill-badge" style="margin: 1rem 0;">✓ СБП (мгновенно)</li>
+            <li class="pill-badge" style="margin: 1rem 0;">✓ Картой онлайн</li>
+            <li class="pill-badge" style="margin: 1rem 0;">✓ Наличные при получении</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🚚 Доставка</h4>
+          <ul style="font-size: 1.5rem; list-style: none;">
+            <li class="pill-badge" style="margin: 1rem 0;">✓ СДЭК (2-7 дней)</li>
+            <li class="pill-badge" style="margin: 1rem 0;">✓ Почта России</li>
+            <li class="pill-badge" style="margin: 1rem 0;">✓ Курьер (Москва/СПб)</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background: #ffe6f0; padding: 2rem; border-radius: 60px; border: 3px solid #ff5690; text-align: center;">
+        <span style="font-size: 2rem;">🎁 Бесплатная курьерская доставка по Москве и СПб от 5000₽</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- МЕДИА И СОБЫТИЯ (media) -->
+  <section id="media">
+    <div class="section-decoration">MEDIA</div>
+    <h2 class="section-title">Медиа и события</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+      <div style="background: #ffd9e6; padding: 2rem; border-radius: 40px;">
+        <h3 style="font-size: 2rem;">📰 О нас пишут</h3>
+        <a href="https://popmoda.ru/news/shelkovoe-bele-convoitee" target="_blank" style="display: block; font-size: 1.5rem; margin: 1.5rem 0; color: #a52d5a;">
+          ✦ Popmoda.ru: лимитированная коллекция
+        </a>
+        <p style="font-size: 1.3rem;">⚡ Упоминание в РБК Companies (товарный знак №629778)</p>
+      </div>
+      <div style="background: #ffd9e6; padding: 2rem; border-radius: 40px;">
+        <h3 style="font-size: 2rem;">🏆 Участие в выставке</h3>
+        <p style="font-size: 2rem; color: #d43f73;">XVIII Lingerie Show-Forum 2022</p>
+        <p style="font-size: 1.3rem;">Москва — презентация новых коллекций</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 2rem; margin: 3rem 0;">📸 Фотографии с выставки</h3>
+    <div class="image-showcase" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0209.JPG" alt="LSF 1"></div>
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0225.JPG" alt="LSF 2"></div>
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0226.JPG" alt="LSF 3"></div>
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1162.JPG" alt="LSF 4"></div>
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1215.JPG" alt="LSF 5"></div>
+      <div class="image-frame"><img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/photo_5409222705145830781_y.jpg" alt="LSF 6"></div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ (contacts) -->
+  <section id="contacts">
+    <div class="section-decoration">CONTACT</div>
+    <h2 class="section-title">Мы всегда на связи</h2>
+    
+    <div class="contact-grid">
+      <div>
+        <p style="font-size: 1.8rem; background: #ffe6f0; padding: 1rem; border-radius: 40px;">Бесплатные консультации, обработка 1–2 часа, ежедневно 9:00–21:00</p>
+        
+        <ul class="contact-list">
+          <li><span class="contact-icon">📞</span> +7 (925) 900-50-28 (Елена)</li>
+          <li><span class="contact-icon">✉️</span> info@convoitee.ru</li>
+          <li><span class="contact-icon">📱</span> t.me/convoitee_ru</li>
+          <li><span class="contact-icon">📌</span> vk.com/convoitee_shop</li>
+        </ul>
+      </div>
+      
+      <div>
+        <div style="background: #ffe6f0; padding: 2rem; border-radius: 40px; text-align: center;">
+          <h3 style="font-size: 2rem;">сертификат соответствия</h3>
+          <div class="image-frame" style="max-width: 300px; margin: 2rem auto;">
+            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/sertifikat.png" alt="Сертификат">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ / ССЫЛКА НА САЙТ -->
+  <div class="footer">
+    <img src="https://github.com/diz-max/convoitee/raw/7953b2995e21ed14fb5d751f827b37dbc922c989/images/logo.png" 
+         alt="Convoitee" style="max-width: 200px; margin-bottom: 2rem;">
+    <h2 style="font-size: 3.5rem; color: #d43f73;">Ваша тайная уверенность</h2>
+    <div style="width: 150px; height: 3px; background: #ff99bb; margin: 2rem auto;"></div>
+    <a href="https://convoitee.ru" target="_blank" class="btn-fuchsia">convoitee.ru</a>
+    <p style="margin-top: 3rem; font-size: 1.2rem;">✧ итальянский шёлк с 2018 ✧</p>
+  </div>
 
 </div>
 </body>
