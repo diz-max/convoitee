@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convoitee — финальная презентация (исправлено)</title>
+  <title>Convoitee — полная версия с медиа</title>
   <style>
-    /* ОБНОВЛЕННЫЕ СТИЛИ: скругления уменьшены с 32px до 12px-16px */
     * {
       margin: 0;
       padding: 0;
@@ -13,13 +12,12 @@
     }
 
     body {
-      background-color: #faf3ef;
+      background: #2c1e16;
       font-family: 'Cormorant Garamond', 'Georgia', serif;
-      color: #3a312c;
+      color: #3a241b;
       scroll-behavior: smooth;
     }
 
-    /* Новые, более умеренные скругления */
     .slide, .content-card, .btn, .stat-block, .contact-item, .pill-badge, .feature-icon, img {
       border-radius: 16px !important;
     }
@@ -38,112 +36,120 @@
       align-items: center;
       justify-content: center;
       padding: 2rem 3rem;
-      background: #fffaf5;
-      border-radius: 24px 24px 0 0; /* скругление верхних углов слайда тоже уменьшено */
+      border-radius: 24px 24px 0 0;
       margin: 0 1rem 1rem 1rem;
-      box-shadow: 0 20px 40px -20px rgba(90, 60, 40, 0.2);
+      box-shadow: 0 25px 50px -15px rgba(0,0,0,0.6);
     }
 
-    .slide-1 { background: linear-gradient(145deg, #fff1e6, #ffeede, #fff6ed); }
-    .slide-2 { background: linear-gradient(125deg, #fff9f3, #f9e9dd, #fff3e9); }
-    .slide-3 { background: linear-gradient(115deg, #fdeede, #fff8f2, #fde7d9); }
-    .slide-4 { background: linear-gradient(135deg, #fff2e6, #fce6d6, #fff9f2); }
-    .slide-5 { background: linear-gradient(105deg, #fff7f0, #fee7d7, #fff2e5); }
-    .slide-6 { background: linear-gradient(125deg, #ffefe2, #fff3e9, #ffeadb); }
-    .slide-7 { background: linear-gradient(115deg, #fceae0, #fff5eb, #fde4d5); }
-    .slide-8 { background: linear-gradient(135deg, #fff1e3, #fdefe3, #fff7ed); }
-    .slide-9 { background: linear-gradient(120deg, #fff9f0, #ffe7d4, #fff2e2); }
+    /* Фирменные градиенты с фуксией */
+    .slide-1 { background: linear-gradient(145deg, #ffd7c4 0%, #ffb3d1 70%, #ff8eb5 100%); }
+    .slide-2 { background: radial-gradient(circle at 10% 30%, #ffe5d5, #ffc2d6, #ff9bb8); }
+    .slide-3 { background: linear-gradient(125deg, #fce6d6, #ffb8cf, #ffd3b5); }
+    .slide-4 { background: radial-gradient(ellipse at top, #ffe2d0, #ffaac9); }
+    .slide-5 { background: linear-gradient(115deg, #ffd1bb, #ff9fc3, #ffc1a3); }
+    .slide-6 { background: radial-gradient(circle at 30% 70%, #ffddcc, #ffb1ca, #ffd4b0); }
+    .slide-7 { background: linear-gradient(145deg, #fbcbb5, #ff9bc0, #ffcfa8); }
+    .slide-8 { background: radial-gradient(ellipse at 60% 40%, #ffcdbb, #ffadc9, #fec8a8); }
+    .slide-9 { background: linear-gradient(135deg, #ffdac8, #ffa7c5, #ffcbb2); }
+    .slide-10 { background: radial-gradient(circle at 80% 20%, #ffd0bd, #ff9abf, #ffbea3); }
 
     .content-wrapper {
       max-width: 1300px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 245, 240, 0.9);
+      backdrop-filter: blur(10px);
       padding: 3rem 4rem;
-      border-radius: 28px; /* уменьшено */
-      box-shadow: 0 25px 40px -20px rgba(140, 90, 60, 0.2), 0 0 0 1px rgba(240, 200, 170, 0.5) inset;
+      border-radius: 28px;
+      box-shadow: 0 30px 50px -20px rgba(199, 0, 100, 0.4), 0 0 0 2px rgba(255, 128, 150, 0.6) inset;
+      border: 1px solid #ffb0c3;
     }
 
     h1 {
       font-size: 5.2rem;
       font-weight: 300;
       letter-spacing: 0.02em;
-      color: #4c3a2e;
+      color: #371f16;
       line-height: 1.1;
+      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
     }
 
     h2 {
       font-size: 3.4rem;
       font-weight: 350;
-      color: #634e3f;
+      color: #4d2b1e;
       margin-bottom: 2rem;
       padding-bottom: 0.75rem;
-      border-bottom: 2px solid #f0cdb0;
+      border-bottom: 3px solid #ff5690;
       display: inline-block;
+      text-shadow: 1px 1px 6px #ffc0cb70;
     }
 
     h3 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 1.6rem;
       letter-spacing: 2px;
-      color: #aa7b5c;
+      color: #b34167;
       margin-bottom: 1.5rem;
     }
 
-    .soft-gold {
-      color: #b38462;
-      font-weight: 500;
+    .fuchsia-text {
+      color: #d43f73;
+      font-weight: 600;
+      text-shadow: 0 0 8px #ffb6c1;
     }
 
     .lead-text {
       font-size: 1.9rem;
       font-style: italic;
-      color: #5f4a3b;
+      color: #482c20;
       margin-bottom: 2rem;
       line-height: 1.4;
+      background: rgba(255, 230, 240, 0.7);
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      display: inline-block;
     }
 
-    .grid-3, .grid-2 {
+    .grid-3, .grid-2, .grid-4 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       margin: 2.5rem 0;
     }
 
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
     .content-card {
-      background: rgba(255, 245, 235, 0.8);
+      background: rgba(255, 235, 240, 0.85);
       backdrop-filter: blur(4px);
       padding: 2rem 1.8rem;
-      border-radius: 16px; /* уменьшено */
-      box-shadow: 0 15px 25px -10px rgba(130, 80, 50, 0.15);
-      border: 1px solid #ffe2cf;
+      border-radius: 16px;
+      box-shadow: 0 20px 30px -10px #b3416750, 0 0 0 2px #ff99bb inset;
+      border: 1px solid #ff84a9;
       transition: all 0.3s;
     }
 
     .content-card:hover {
-      background: #fffaf5;
-      box-shadow: 0 25px 35px -12px #b48d72;
-      transform: translateY(-6px);
-      border-color: #e7b594;
+      background: #fff0f5;
+      box-shadow: 0 25px 35px -8px #c72466;
+      transform: translateY(-8px);
+      border-color: #ff4076;
     }
 
     .feature-icon {
-      font-size: 2.8rem;
-      background: #fff0e2;
-      width: 70px;
-      height: 70px;
+      font-size: 3rem;
+      background: #ffd9e5;
+      width: 80px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 20px; /* уменьшено с 40px */
+      border-radius: 20px;
       margin-bottom: 1.2rem;
-      color: #9e7357;
-      box-shadow: 0 5px 10px #ead3c2;
+      color: #a1355a;
+      box-shadow: 0 8px 15px #ff87b0;
     }
 
     .stats-container {
@@ -154,86 +160,95 @@
     }
 
     .stat-block {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 235, 245, 0.9);
       padding: 2rem 2.5rem;
-      border-radius: 24px; /* уменьшено с 60px */
+      border-radius: 24px;
       text-align: center;
       min-width: 180px;
       backdrop-filter: blur(4px);
-      border: 1px solid #f5d5bc;
-      box-shadow: 0 10px 20px #ecd7c9;
+      border: 2px solid #ff7ca9;
+      box-shadow: 0 15px 25px #b3416750;
     }
 
     .stat-number {
-      font-size: 4.2rem;
+      font-size: 4.5rem;
       font-weight: 200;
       font-family: 'Montserrat', sans-serif;
-      color: #a67557;
+      color: #b33b66;
       line-height: 1;
+      text-shadow: 0 0 12px #ffa5c0;
     }
 
     .stat-label {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       letter-spacing: 2px;
-      color: #755e4d;
+      color: #4d2a1c;
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      background: #ffeede;
+      background: #ffe1ec;
       padding: 1rem 2rem;
-      border-radius: 40px; /* оставим чуть больше для контактов, но можно и уменьшить */
+      border-radius: 40px;
       margin: 1.2rem 0;
-      border: 1px solid #f3cbb2;
+      border: 2px solid #ff80a8;
       font-size: 1.4rem;
+      color: #2f1a12;
+      font-weight: 500;
     }
 
     .contact-icon {
-      background: #dbb99c;
+      background: #ff5690;
       color: white;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 20px; /* уменьшено */
-      font-size: 1.8rem;
-      box-shadow: 0 4px 8px #cfa986;
+      border-radius: 20px;
+      font-size: 2rem;
+      box-shadow: 0 6px 10px #b3004b;
     }
 
     .btn-soft {
       display: inline-block;
       padding: 1.2rem 3rem;
       font-family: 'Montserrat', sans-serif;
-      background: #ffffffc2;
-      border: 2px solid #dbb296;
-      border-radius: 40px; /* для кнопок можно оставить чуть скругленнее */
-      color: #5d4433;
+      background: #ffecf0;
+      border: 3px solid #ff3f7a;
+      border-radius: 40px;
+      color: #371f16;
       text-decoration: none;
       letter-spacing: 3px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       backdrop-filter: blur(4px);
       transition: all 0.4s;
       margin-top: 2rem;
+      font-weight: 600;
+      box-shadow: 0 5px 0 #b32258;
     }
 
     .btn-soft:hover {
-      background: #ebcfbb;
-      border-color: #b68b70;
-      box-shadow: 0 10px 25px -5px #d1a181;
+      background: #ffb0cb;
+      border-color: #d41e5a;
+      box-shadow: 0 8px 20px #ff80b0;
+      transform: scale(1.02);
     }
 
     .pill-badge {
-      background: #ffffffb8;
+      background: #ffebf0;
       padding: 0.8rem 2.2rem;
-      border-radius: 30px; /* уменьшено */
+      border-radius: 30px;
       display: inline-block;
       backdrop-filter: blur(2px);
-      border: 1px solid #e5c1a8;
+      border: 2px solid #ff74a2;
       font-size: 1.1rem;
+      color: #4d261b;
+      font-weight: 500;
     }
 
     .slide img {
@@ -241,13 +256,13 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 16px; /* уменьшено с 60px */
-      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.15);
-      border: 1px solid #fad7bd;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px -5px #b3416780;
+      border: 2px solid #ff99bb;
     }
 
     .image-wrapper {
-      border-radius: 16px; /* уменьшено */
+      border-radius: 16px;
       overflow: hidden;
       height: 100%;
       max-height: 400px;
@@ -264,18 +279,56 @@
 
     .marketplace-logos img {
       width: auto;
-      height: 60px;
-      max-width: 150px;
+      height: 70px;
+      max-width: 180px;
       object-fit: contain;
       background: white;
-      padding: 0.5rem 1rem;
-      border-radius: 12px !important; /* уменьшено */
+      padding: 0.5rem 1.5rem;
+      border-radius: 12px !important;
+      border: 2px solid #ff5b8f;
+    }
+
+    .fuchsia-stripe {
+      height: 4px;
+      background: linear-gradient(90deg, #ff99bb, #ff3470, #ff99bb);
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    /* стили для ссылок на публикации */
+    .press-link {
+      display: block;
+      background: rgba(255, 220, 235, 0.7);
+      padding: 1rem 1.8rem;
+      border-radius: 40px;
+      border: 2px solid #ff5690;
+      color: #371f16;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: 0.3s;
+      margin: 1rem 0;
+    }
+
+    .press-link:hover {
+      background: #ffb0cb;
+      transform: translateX(8px);
+    }
+
+    .event-badge {
+      background: #ffd0dd;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      display: inline-block;
+      border: 2px solid #ff3f7a;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #a52d5a;
     }
 
     @media (max-width: 900px) {
       h1 { font-size: 3.5rem; }
       h2 { font-size: 2.5rem; }
-      .grid-3, .grid-2, .stats-container { grid-template-columns: 1fr; flex-direction: column; }
+      .grid-3, .grid-2, .grid-4, .stats-container { grid-template-columns: 1fr; flex-direction: column; }
       .content-wrapper { padding: 2rem; }
       .slide { padding: 1rem; }
     }
@@ -284,15 +337,14 @@
 <body>
 <div class="presentation">
 
-  <!-- СЛАЙД 1 – титульный с главным баннером -->
+  <!-- СЛАЙД 1 – титульный -->
   <section class="slide slide-1">
     <div class="content-wrapper" style="text-align: center;">
-      <!-- ВОЗВРАЩЕН НУЖНЫЙ ЛОГОТИП -->
       <img src="https://github.com/diz-max/convoitee/raw/7953b2995e21ed14fb5d751f827b37dbc922c989/images/logo.png" 
            alt="Convoitee logo" 
-           style="max-width: 300px; margin: 0 auto 1.5rem; background: transparent;">
-      <h1>итальянская роскошь<br><span class="soft-gold">на вашей коже</span></h1>
-      <div style="width: 120px; height: 2px; background: #f0cbb2; margin: 1.8rem auto;"></div>
+           style="max-width: 300px; margin: 0 auto 1rem; filter: drop-shadow(0 5px 10px #ff8fb3);">
+      <h1>итальянская роскошь<br><span class="fuchsia-text">на вашей коже</span></h1>
+      <div class="fuchsia-stripe" style="max-width: 500px; margin: 1rem auto;"></div>
       <div class="lead-text" style="font-size: 2rem;">since 2018 · тайная уверенность</div>
       <div class="image-wrapper" style="max-width: 700px; margin: 2rem auto 0;">
         <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1.jpg" 
@@ -342,7 +394,7 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 4 – цифры -->
+  <!-- СЛАЙД 4 – цифры + регистрация товарного знака -->
   <section class="slide slide-4">
     <div class="content-wrapper">
       <h2>Нам доверяют</h2>
@@ -360,6 +412,12 @@
           <div class="stat-label">клиентов довольны</div>
         </div>
       </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <div class="pill-badge" style="background: #ffd9e6; font-size: 1.2rem;">
+          ⚖️ Официальная торговая марка №629778 (зарегистрирована 12.09.2017)
+        </div>
+        <p style="margin-top: 1rem; font-size: 1.2rem;">Правообладатель: Горячева Елена Владимировна</p>
+      </div>
     </div>
   </section>
 
@@ -367,28 +425,28 @@
   <section class="slide slide-5">
     <div class="content-wrapper">
       <h2>Каталог Convoitee</h2>
-      <p class="lead-text" style="font-size: 1.7rem;">Эксклюзивные модели, созданные с любовью к деталям</p>
+      <p class="lead-text">Эксклюзивные модели, созданные с любовью к деталям</p>
       <div class="grid-3">
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
             <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_fucsia.jpg" 
                  alt="Комплект фуксия">
           </div>
-          <p style="text-align: center;">комплект «Фуксия»</p>
+          <p style="text-align: center; font-size: 1.3rem; color: #b33b66;">комплект «Фуксия»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
             <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_sinii.jpg" 
                  alt="Комплект синий">
           </div>
-          <p style="text-align: center;">комплект «Индиго»</p>
+          <p style="text-align: center; font-size: 1.3rem; color: #2f6290;">комплект «Индиго»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
             <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1769711735.png" 
                  alt="Пеньюар">
           </div>
-          <p style="text-align: center;">пеньюар</p>
+          <p style="text-align: center; font-size: 1.3rem; color: #b3623b;">пеньюар</p>
         </div>
       </div>
     </div>
@@ -430,14 +488,65 @@
           </ul>
         </div>
       </div>
-      <div class="content-card" style="background: #ffefe1; margin-top: 2rem; text-align: center; padding: 2rem;">
-        <span style="font-size: 1.8rem;">🎁 Бесплатная курьерская доставка по Москве и СПб от 5000₽</span>
+      <div class="content-card" style="background: #ffe6f0; margin-top: 2rem; text-align: center; padding: 2rem;">
+        <span style="font-size: 1.8rem; color: #a52d5a;">🎁 Бесплатная курьерская доставка по Москве и СПб от 5000₽</span>
       </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 8 – контакты и сертификат -->
+  <!-- СЛАЙД 8 – МЕДИА И СОБЫТИЯ (новый) -->
   <section class="slide slide-8">
+    <div class="content-wrapper">
+      <h2>Медиа и события</h2>
+      
+      <div class="grid-2" style="margin-bottom: 2rem;">
+        <!-- левая колонка: публикации -->
+        <div>
+          <h3>📰 О нас пишут</h3>
+          <a href="https://popmoda.ru/news/shelkovoe-bele-convoitee" target="_blank" class="press-link">
+            ✦ Popmoda.ru: шелковое белье Convoitee (лимитированная коллекция)
+          </a>
+          <div style="margin-top: 1.5rem;">
+            <span class="event-badge">⚡ Упоминание в РБК Companies</span>
+            <p style="margin-top: 0.8rem;">Товарный знак CONVOITEE №629778 (2017–2026)</p>
+          </div>
+        </div>
+        <!-- правая колонка: участие в выставке -->
+        <div>
+          <h3>🏆 Участие в выставке</h3>
+          <div class="pill-badge" style="font-size: 1.4rem; background: #ffd0e0;">XVIII Lingerie Show-Forum 2022</div>
+          <p style="margin: 1rem 0;">Москва, 2022 — презентация новых коллекций</p>
+        </div>
+      </div>
+
+      <!-- галерея фото с выставки (6 штук) -->
+      <h3 style="margin: 2rem 0 1rem;">📸 Фотографии с Lingerie Show-Forum</h3>
+      <div class="grid-3" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0209.JPG" alt="Выставка LSF 1">
+        </div>
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0225.JPG" alt="Выставка LSF 2">
+        </div>
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_0226.JPG" alt="Выставка LSF 3">
+        </div>
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1162.JPG" alt="Выставка LSF 4">
+        </div>
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/XVIII_LSF_I_1215.JPG" alt="Выставка LSF 5">
+        </div>
+        <div class="image-wrapper" style="height: 150px;">
+          <img src="https://github.com/diz-max/convoitee/raw/4bc2e8ae313786f3d0690405edd6cd872af657dd/images/photo_5409222705145830781_y.jpg" alt="Выставка LSF 6">
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 1.5rem;" class="pill-badge">★ Convoitee — участник главного события индустрии ★</p>
+    </div>
+  </section>
+
+  <!-- СЛАЙД 9 – контакты и сертификат -->
+  <section class="slide slide-9">
     <div class="content-wrapper">
       <h2>Мы всегда на связи</h2>
       <div class="grid-2">
@@ -461,16 +570,15 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 9 – финальный -->
-  <section class="slide slide-9">
+  <!-- СЛАЙД 10 – финальный -->
+  <section class="slide slide-10">
     <div class="content-wrapper" style="text-align: center;">
-      <!-- ВОЗВРАЩЕН НУЖНЫЙ ЛОГОТИП -->
       <img src="https://github.com/diz-max/convoitee/raw/7953b2995e21ed14fb5d751f827b37dbc922c989/images/logo.png" 
            alt="Convoitee" 
-           style="max-width: 250px; margin-bottom: 1.5rem; background: transparent;">
+           style="max-width: 250px; margin-bottom: 1.5rem; filter: drop-shadow(0 5px 10px #ff80a8);">
       <div class="lead-text" style="font-size: 2.5rem;">Ваша тайная уверенность</div>
-      <div style="width: 150px; height: 2px; background: #f2cfb4; margin: 2rem auto;"></div>
-      <p style="font-size: 2rem;">Переходите на сайт</p>
+      <div class="fuchsia-stripe" style="max-width: 300px; margin: 1rem auto;"></div>
+      <p style="font-size: 2rem; color: #802d4d;">Переходите на сайт</p>
       <a href="https://convoitee.ru" target="_blank" class="btn-soft">convoitee.ru</a>
       <div style="margin-top: 3rem;" class="pill-badge">✧ итальянский шёлк с 2018 ✧</div>
     </div>
