@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convoitee — презентация с вашими фото</title>
+  <title>Convoitee — финальная презентация</title>
   <style>
+    /* Стили полностью сохранены из предыдущей версии */
     * {
       margin: 0;
       padding: 0;
@@ -18,7 +19,6 @@
       scroll-behavior: smooth;
     }
 
-    /* все скругления */
     .slide, .content-card, .btn, .stat-block, .contact-item, .pill-badge, .feature-icon, img {
       border-radius: 32px !important;
     }
@@ -43,7 +43,6 @@
       box-shadow: 0 20px 40px -20px rgba(90, 60, 40, 0.2);
     }
 
-    /* светлые градиенты для слайдов */
     .slide-1 { background: linear-gradient(145deg, #fff1e6, #ffeede, #fff6ed); }
     .slide-2 { background: linear-gradient(125deg, #fff9f3, #f9e9dd, #fff3e9); }
     .slide-3 { background: linear-gradient(115deg, #fdeede, #fff8f2, #fde7d9); }
@@ -236,7 +235,6 @@
       font-size: 1.1rem;
     }
 
-    /* стили для изображений */
     .slide img {
       width: 100%;
       height: 100%;
@@ -254,6 +252,25 @@
       max-height: 400px;
     }
 
+    .marketplace-logos {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+
+    .marketplace-logos img {
+      width: auto;
+      height: 60px;
+      max-width: 150px;
+      object-fit: contain;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 40px !important;
+    }
+
     @media (max-width: 900px) {
       h1 { font-size: 3.5rem; }
       h2 { font-size: 2.5rem; }
@@ -266,23 +283,23 @@
 <body>
 <div class="presentation">
 
-  <!-- СЛАЙД 1 – титульный с главным баннером -->
+  <!-- СЛАЙД 1 – титульный с главным баннером (лого + 1.jpg) -->
   <section class="slide slide-1">
     <div class="content-wrapper" style="text-align: center;">
-      <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/logo.png" 
+      <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1768902076.png" 
            alt="Convoitee logo" 
            style="max-width: 300px; margin: 0 auto 1.5rem; background: transparent;">
       <h1>итальянская роскошь<br><span class="soft-gold">на вашей коже</span></h1>
       <div style="width: 120px; height: 2px; background: #f0cbb2; margin: 1.8rem auto;"></div>
       <div class="lead-text" style="font-size: 2rem;">since 2018 · тайная уверенность</div>
       <div class="image-wrapper" style="max-width: 700px; margin: 2rem auto 0;">
-        <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1.jpg" 
              alt="Convoitee шелковое белье">
       </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 2 – философия (без изображений, оставляем как есть) -->
+  <!-- СЛАЙД 2 – философия (с новым изображением 1768902346.png) -->
   <section class="slide slide-2">
     <div class="content-wrapper">
       <h2>История любви к себе</h2>
@@ -292,7 +309,7 @@
           <div class="pill-badge">— команда Convoitee</div>
         </div>
         <div class="image-wrapper">
-          <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+          <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1768902346.png" 
                alt="Утонченность Convoitee">
         </div>
       </div>
@@ -344,7 +361,7 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 5 – каталог моделей (с вашими фото товаров) -->
+  <!-- СЛАЙД 5 – каталог моделей (с вашими фото товаров + новое 1769711735.png) -->
   <section class="slide slide-5">
     <div class="content-wrapper">
       <h2>Каталог Convoitee</h2>
@@ -352,21 +369,21 @@
       <div class="grid-3">
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/shop_images/comp_fucsia.jpg" 
+            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_fucsia.jpg" 
                  alt="Комплект фуксия">
           </div>
           <p style="text-align: center;">комплект «Фуксия»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/shop_images/comp_sinii.jpg" 
+            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/shop_images/comp_sinii.jpg" 
                  alt="Комплект синий">
           </div>
           <p style="text-align: center;">комплект «Индиго»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
           <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
-            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+            <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1769711735.png" 
                  alt="Пеньюар">
           </div>
           <p style="text-align: center;">пеньюар</p>
@@ -375,15 +392,16 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 6 – маркетплейсы (без новых фото) -->
+  <!-- СЛАЙД 6 – маркетплейсы (с логотипами Ozon и Wildberries) -->
   <section class="slide slide-6">
     <div class="content-wrapper">
       <h2>Мы на маркетплейсах</h2>
-      <p class="lead-text">Wildberries, Ozon, Яндекс Маркет — быстрая доставка и гарантия качества.</p>
-      <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2.5rem 0;">
-        <span class="content-card" style="padding: 1.2rem 3rem; font-size: 2rem;">WB</span>
-        <span class="content-card" style="padding: 1.2rem 3rem; font-size: 2rem;">OZON</span>
-        <span class="content-card" style="padding: 1.2rem 3rem; font-size: 2rem;">ЯМ</span>
+      <p class="lead-text">Wildberries, Ozon — быстрая доставка и гарантия качества.</p>
+      <div class="marketplace-logos">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/wallberis_logo.png" 
+             alt="Wildberries">
+        <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/ozon_logo.png" 
+             alt="Ozon">
       </div>
     </div>
   </section>
@@ -416,7 +434,7 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 8 – контакты и сертификат (с вашим сертификатом) -->
+  <!-- СЛАЙД 8 – контакты и сертификат -->
   <section class="slide slide-8">
     <div class="content-wrapper">
       <h2>Мы всегда на связи</h2>
@@ -432,7 +450,7 @@
           <div class="content-card" style="text-align: center;">
             <h3>сертификат соответствия</h3>
             <div class="image-wrapper" style="height: 150px;">
-              <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/sertifikat.png" 
+              <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/sertifikat.png" 
                    alt="Сертификат качества Convoitee">
             </div>
           </div>
@@ -441,12 +459,12 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 9 – финальный -->
+  <!-- СЛАЙД 9 – финальный (с логотипом 1768902076.png) -->
   <section class="slide slide-9">
     <div class="content-wrapper" style="text-align: center;">
-      <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/logo.png" 
+      <img src="https://github.com/diz-max/convoitee/raw/3861b2e740c5a464197b04ec96a713727a425720/images/1768902076.png" 
            alt="Convoitee" 
-           style="max-width: 250px; margin-bottom: 1.5rem;">
+           style="max-width: 250px; margin-bottom: 1.5rem; background: transparent;">
       <div class="lead-text" style="font-size: 2.5rem;">Ваша тайная уверенность</div>
       <div style="width: 150px; height: 2px; background: #f2cfb4; margin: 2rem auto;"></div>
       <p style="font-size: 2rem;">Переходите на сайт</p>
