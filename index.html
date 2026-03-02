@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convoitee — светлая презентация с мягкими углами</title>
+  <title>Convoitee — презентация с вашими фото</title>
   <style>
     * {
       margin: 0;
@@ -12,18 +12,17 @@
     }
 
     body {
-      background-color: #faf3ef; /* тёплая светлая основа */
+      background-color: #faf3ef;
       font-family: 'Cormorant Garamond', 'Georgia', serif;
       color: #3a312c;
       scroll-behavior: smooth;
     }
 
-    /* все скругления глобально */
-    .slide, .content-card, button, .btn, .stat-block, .contact-item, .silk-glow, .pill-badge, .feature-icon {
+    /* все скругления */
+    .slide, .content-card, .btn, .stat-block, .contact-item, .pill-badge, .feature-icon, img {
       border-radius: 32px !important;
     }
 
-    /* контейнер с прокруткой */
     .presentation {
       height: 100vh;
       overflow-y: scroll;
@@ -38,13 +37,13 @@
       align-items: center;
       justify-content: center;
       padding: 2rem 3rem;
-      background: #fffaf5;  /* базовый светлый фон */
-      border-radius: 48px 48px 0 0;  /* скругление сверху */
+      background: #fffaf5;
+      border-radius: 48px 48px 0 0;
       margin: 0 1rem 1rem 1rem;
       box-shadow: 0 20px 40px -20px rgba(90, 60, 40, 0.2);
     }
 
-    /* мягкий акварельный градиент для каждого слайда — очень светлый */
+    /* светлые градиенты для слайдов */
     .slide-1 { background: linear-gradient(145deg, #fff1e6, #ffeede, #fff6ed); }
     .slide-2 { background: linear-gradient(125deg, #fff9f3, #f9e9dd, #fff3e9); }
     .slide-3 { background: linear-gradient(115deg, #fdeede, #fff8f2, #fde7d9); }
@@ -55,7 +54,6 @@
     .slide-8 { background: linear-gradient(135deg, #fff1e3, #fdefe3, #fff7ed); }
     .slide-9 { background: linear-gradient(120deg, #fff9f0, #ffe7d4, #fff2e2); }
 
-    /* контентные блоки — белые с лёгкой тенью */
     .content-wrapper {
       max-width: 1300px;
       width: 100%;
@@ -106,7 +104,6 @@
       line-height: 1.4;
     }
 
-    /* все карточки с большим скруглением */
     .grid-3, .grid-2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -182,7 +179,6 @@
       text-transform: uppercase;
     }
 
-    /* мягкие плашки для контактов */
     .contact-item {
       display: flex;
       align-items: center;
@@ -230,20 +226,6 @@
       box-shadow: 0 10px 25px -5px #d1a181;
     }
 
-    .silk-glow {
-      background: linear-gradient(135deg, #fff3e9, #fde5d3);
-      height: 200px;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      color: #a87c62;
-      border: 1px solid #fad7bd;
-      box-shadow: inset 0 -5px 10px #ffe7d6, 0 15px 25px -10px #cfa882;
-      font-style: italic;
-    }
-
     .pill-badge {
       background: #ffffffb8;
       padding: 0.8rem 2.2rem;
@@ -254,32 +236,53 @@
       font-size: 1.1rem;
     }
 
-    /* мобильная адаптация */
+    /* стили для изображений */
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 60px;
+      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.15);
+      border: 1px solid #fad7bd;
+    }
+
+    .image-wrapper {
+      border-radius: 60px;
+      overflow: hidden;
+      height: 100%;
+      max-height: 400px;
+    }
+
     @media (max-width: 900px) {
       h1 { font-size: 3.5rem; }
       h2 { font-size: 2.5rem; }
       .grid-3, .grid-2, .stats-container { grid-template-columns: 1fr; flex-direction: column; }
       .content-wrapper { padding: 2rem; }
       .slide { padding: 1rem; }
-      .stat-block { width: 100%; }
     }
   </style>
 </head>
 <body>
 <div class="presentation">
 
-  <!-- СЛАЙД 1 – титульный, светлый, скругленный -->
+  <!-- СЛАЙД 1 – титульный с главным баннером -->
   <section class="slide slide-1">
     <div class="content-wrapper" style="text-align: center;">
-      <h3 style="color: #b6896b;">CONVOITEE</h3>
+      <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/logo.png" 
+           alt="Convoitee logo" 
+           style="max-width: 300px; margin: 0 auto 1.5rem; background: transparent;">
       <h1>итальянская роскошь<br><span class="soft-gold">на вашей коже</span></h1>
       <div style="width: 120px; height: 2px; background: #f0cbb2; margin: 1.8rem auto;"></div>
       <div class="lead-text" style="font-size: 2rem;">since 2018 · тайная уверенность</div>
-      <div class="silk-glow" style="max-width: 700px; margin: 2rem auto 0;">✦ итальянский шёлк ✦</div>
+      <div class="image-wrapper" style="max-width: 700px; margin: 2rem auto 0;">
+        <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+             alt="Convoitee шелковое белье">
+      </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 2 – философия -->
+  <!-- СЛАЙД 2 – философия (без изображений, оставляем как есть) -->
   <section class="slide slide-2">
     <div class="content-wrapper">
       <h2>История любви к себе</h2>
@@ -288,12 +291,15 @@
           <p class="lead-text">«С 2018 года мы создаём нижнее бельё, где каждая деталь — история вашей внутренней уверенности. Convoitee — это не просто белье, это тайная уверенность, которая всегда с вами.»</p>
           <div class="pill-badge">— команда Convoitee</div>
         </div>
-        <div class="silk-glow" style="height: 280px;">воплощение утончённости</div>
+        <div class="image-wrapper">
+          <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+               alt="Утонченность Convoitee">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 3 – три качества -->
+  <!-- СЛАЙД 3 – три качества (иконки оставляем) -->
   <section class="slide slide-3">
     <div class="content-wrapper">
       <h2>Безупречно в каждой детали</h2>
@@ -314,11 +320,10 @@
           <p>Каждый элемент собирается вручную, чтобы гарантировать безупречное качество.</p>
         </div>
       </div>
-      <div style="text-align: right;" class="pill-badge">макрофактура · детали</div>
     </div>
   </section>
 
-  <!-- СЛАЙД 4 – цифры и доверие -->
+  <!-- СЛАЙД 4 – цифры (без фото) -->
   <section class="slide slide-4">
     <div class="content-wrapper">
       <h2>Нам доверяют</h2>
@@ -336,35 +341,41 @@
           <div class="stat-label">клиентов довольны</div>
         </div>
       </div>
-      <div style="display: flex; justify-content: center;">
-        <span class="pill-badge" style="padding: 1rem 3rem;">★ доверие, заслуженное качеством ★</span>
-      </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 5 – каталог модели -->
+  <!-- СЛАЙД 5 – каталог моделей (с вашими фото товаров) -->
   <section class="slide slide-5">
     <div class="content-wrapper">
       <h2>Каталог Convoitee</h2>
       <p class="lead-text" style="font-size: 1.7rem;">Эксклюзивные модели, созданные с любовью к деталям</p>
       <div class="grid-3">
         <div class="content-card" style="padding: 1.5rem;">
-          <div class="silk-glow" style="height: 180px;">Бра с кружевом</div>
-          <p style="text-align: center; margin-top: 1rem;">нежность шёлка</p>
+          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/shop_images/comp_fucsia.jpg" 
+                 alt="Комплект фуксия">
+          </div>
+          <p style="text-align: center;">комплект «Фуксия»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
-          <div class="silk-glow" style="height: 180px;">Комплект «Алезия»</div>
-          <p style="text-align: center; margin-top: 1rem;">идеальный силуэт</p>
+          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/shop_images/comp_sinii.jpg" 
+                 alt="Комплект синий">
+          </div>
+          <p style="text-align: center;">комплект «Индиго»</p>
         </div>
         <div class="content-card" style="padding: 1.5rem;">
-          <div class="silk-glow" style="height: 180px;">Пеньюар</div>
-          <p style="text-align: center; margin-top: 1rem;">утончённость</p>
+          <div class="image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+            <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/conv-main-1800x1200-1.jpeg" 
+                 alt="Пеньюар">
+          </div>
+          <p style="text-align: center;">пеньюар</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- СЛАЙД 6 – маркетплейсы -->
+  <!-- СЛАЙД 6 – маркетплейсы (без новых фото) -->
   <section class="slide slide-6">
     <div class="content-wrapper">
       <h2>Мы на маркетплейсах</h2>
@@ -374,7 +385,6 @@
         <span class="content-card" style="padding: 1.2rem 3rem; font-size: 2rem;">OZON</span>
         <span class="content-card" style="padding: 1.2rem 3rem; font-size: 2rem;">ЯМ</span>
       </div>
-      <div class="pill-badge">Найдите Convoitee на любимой площадке</div>
     </div>
   </section>
 
@@ -406,7 +416,7 @@
     </div>
   </section>
 
-  <!-- СЛАЙД 8 – контакты и сертификаты -->
+  <!-- СЛАЙД 8 – контакты и сертификат (с вашим сертификатом) -->
   <section class="slide slide-8">
     <div class="content-wrapper">
       <h2>Мы всегда на связи</h2>
@@ -418,14 +428,13 @@
           <div class="contact-item"><span class="contact-icon">📱</span> t.me/convoitee_ru</div>
           <div class="contact-item"><span class="contact-icon">📌</span> vk.com/convoitee_shop</div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div>
           <div class="content-card" style="text-align: center;">
             <h3>сертификат соответствия</h3>
-            <div class="silk-glow" style="height: 100px;">EAC</div>
-          </div>
-          <div class="content-card" style="text-align: center;">
-            <h3>сертификат качества</h3>
-            <div class="silk-glow" style="height: 100px;">ISO</div>
+            <div class="image-wrapper" style="height: 150px;">
+              <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/sertifikat.png" 
+                   alt="Сертификат качества Convoitee">
+            </div>
           </div>
         </div>
       </div>
@@ -435,7 +444,9 @@
   <!-- СЛАЙД 9 – финальный -->
   <section class="slide slide-9">
     <div class="content-wrapper" style="text-align: center;">
-      <h1 style="font-size: 5rem;">Convoitee</h1>
+      <img src="https://github.com/diz-max/convoitee/raw/02110bbb7b6e7bd86ef259ccee36250fe6dcd485/images/logo.png" 
+           alt="Convoitee" 
+           style="max-width: 250px; margin-bottom: 1.5rem;">
       <div class="lead-text" style="font-size: 2.5rem;">Ваша тайная уверенность</div>
       <div style="width: 150px; height: 2px; background: #f2cfb4; margin: 2rem auto;"></div>
       <p style="font-size: 2rem;">Переходите на сайт</p>
